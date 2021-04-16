@@ -1,0 +1,15 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  labels:
+    app: mcsps-k3s-clients
+  name: mcsps-admin
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: admin
+subjects:
+- name: mcsps-admin@default
+  kind: User
+  apiGroup: rbac.authorization.k8s.io
